@@ -87,6 +87,9 @@ func serveRun(*cobra.Command, []string) {
 	viper.SetDefault(prodMode, defaultProdMode)
 	viper.BindEnv(prodMode)
 
+	viper.SetDefault(dbName, defaultDbName)
+	viper.BindEnv(dbName)
+
 	//Configuring logger for the app
 	log.SetFlags(log.LstdFlags | log.Lshortfile)
 	logger := log.New(os.Stdout, "Tangy-inn: ", log.LstdFlags|log.Lshortfile)
@@ -102,7 +105,7 @@ func serveRun(*cobra.Command, []string) {
 	defer dbSession.Close()
 
 	//Session for managing user data
-	logger.Println("Initializing user session(cookie)...")
+	// logger.Println("Initializing user session(cookie)...")
 	// session := sessions.NewCookieStore([]byte(cfg.CookieSecret))
 
 	//Provider holds application-wide variables
