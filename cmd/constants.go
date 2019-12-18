@@ -15,7 +15,7 @@ const (
 	// dbUser     = "DB_USER"
 	// dbPassword = "DB_PASSWORD"
 	// appName    = "APP_NAME"
-	// dbName     = "DB_NAME"
+	dbName = "DB_NAME"
 
 	prodMode = "PROD_MODE"
 	stagMode = "STAG_MODE"
@@ -35,5 +35,5 @@ const (
 	// defaultDbUser     = "scrum"
 	// defaultDbPassword = "scrum"
 	// defaultAppName    = "immigration"
-	// defaultDbName     = "scrum"
+	defaultDbName = "tangy-inn"
 )

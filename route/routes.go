@@ -8,5 +8,8 @@ import (
 
 func Routes(h *handlers.Provider) chi.Router {
 	r := chi.NewRouter()
+	// Login API
+	r.Post("/login", h.Authenticate)
+
 	return r
 }
