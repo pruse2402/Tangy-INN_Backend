@@ -36,7 +36,8 @@ func (use *user) FindByUser(credential models.LoginDetail) (*models.User, error)
 		"password": utils.SHAEncoding(credential.Password),
 	}
 
-	if err := use.collection.Find(query).One(&userIns); err != nil {
+	err := use.collection.Find(query).One(&userIns)
+	if err != nil {
 		log.Printf("ERROR: FindByUser(%s) - %q\n", credential.EmailID, err)
 		return nil, err
 	}

@@ -11,5 +11,10 @@ func Routes(h *handlers.Provider) chi.Router {
 	// Login API
 	r.Post("/login", h.Authenticate)
 
+	// MenuItem API
+	r.Get("/store/{id}/menuItems", h.GetMenuItemList)
+	r.Post("/menuItem", h.InsertMenuItem)
+	r.Put("/menuItem/{id}", h.UpdateMenuItem)
+
 	return r
 }

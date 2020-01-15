@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 	"tangy-inn/tangy-inn_backend/errs"
+
+	"gopkg.in/mgo.v2/bson"
 )
 
 func parseJson(w http.ResponseWriter, params io.ReadCloser, data interface{}) bool {
@@ -73,4 +75,8 @@ func renderJson(w http.ResponseWriter, status int, res interface{}) {
 	if err := json.NewEncoder(w).Encode(res); err != nil {
 		log.Printf("ERROR: renderJson - %q\n", err)
 	}
+}
+
+func isObjectIDValid(id string) bool {
+	return bson.IsObjectIdHex(id)
 }
