@@ -25,7 +25,7 @@ func (p *Provider) Authenticate(rw http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	res["message"] = "Logged in Successfully"
+	res["message"] = "Logged in Successfullllllly"
 	res["user"] = user
 
 	renderJson(rw, http.StatusOK, res)
