@@ -20,7 +20,7 @@ func (p *Provider) Authenticate(rw http.ResponseWriter, r *http.Request) {
 
 	user, err := internal.UserHasAccess(p.db, credential)
 	if err != nil {
-		res["message"] = "Invalid username or passwords"
+		res["message"] = "Invalid username or password please check it"
 		renderJson(rw, http.StatusUnauthorized, res)
 		return
 	}
